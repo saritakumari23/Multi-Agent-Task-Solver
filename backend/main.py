@@ -27,8 +27,8 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:3000", 
         "http://127.0.0.1:3000",
-        "https://wandai-frontend.onrender.com",
-        "https://wandai-backend.onrender.com"
+        "https://multiagent-task-solver.onrender.com",
+        "https://multi-agent-task-solver.onrender.com"
     ],
     allow_credentials=True,
     allow_methods=["*"],

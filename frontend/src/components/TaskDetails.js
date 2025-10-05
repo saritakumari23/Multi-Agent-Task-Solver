@@ -28,7 +28,7 @@ const TaskDetails = () => {
   const [expandedSubtask, setExpandedSubtask] = useState(null);
 
   // WebSocket connection for real-time updates
-  const { lastMessage, connectionStatus } = useWebSocket(`ws://127.0.0.1:8000/ws/tasks/${taskId}`);
+  const { lastMessage, connectionStatus } = useWebSocket(`wss://multi-agent-task-solver.onrender.com/ws/tasks/${taskId}`);
 
   useEffect(() => {
     fetchTaskDetails();
