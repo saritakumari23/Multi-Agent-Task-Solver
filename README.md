@@ -71,7 +71,7 @@ A smart and friendly system that breaks down complex tasks into manageable subta
    - Backend API: http://localhost:8000
    - API Documentation: http://localhost:8000/docs
 
-## 🌐 Railway Deployment (Recommended)
+## 🌐 Render.com Deployment (Recommended)
 
 ### One-Click Deploy to Railway
 
@@ -82,12 +82,19 @@ A smart and friendly system that breaks down complex tasks into manageable subta
    git push origin main
    ```
 
-2. **Deploy on Railway**
-   - Go to [railway.app](https://railway.app)
+2. **Deploy Backend on Render**
+   - Go to [render.com](https://render.com)
    - Sign up with GitHub
-   - Click "New Project" → "Deploy from GitHub repo"
-   - Select your repository
-   - Railway will automatically detect the configuration
+   - Click "New +" → "Web Service"
+   - Connect your repository
+   - Configure as Python service with build command: `pip install -r requirements.txt`
+   - Start command: `cd backend && python -m uvicorn main:app --host 0.0.0.0 --port $PORT`
+
+3. **Deploy Frontend on Render**
+   - Click "New +" → "Static Site"
+   - Connect the same repository
+   - Build command: `cd frontend && npm install && npm run build`
+   - Publish directory: `frontend/build`
 
 3. **Get Your URL**
    - Backend: `https://your-project.railway.app`
